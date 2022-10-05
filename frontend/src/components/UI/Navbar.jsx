@@ -1,0 +1,94 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Logo from "../../assets/Click-logo.svg";
+import Logo1 from "../../assets/Click-logo.jpg";
+
+import {
+  AiOutlineMenu,
+  AiOutlineSearch,
+  AiOutlineClose,
+  AiFillTag,
+} from "react-icons/ai";
+import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
+import { TbTruckDelivery } from "react-icons/tb";
+import { FaUserFriends, FaWallet } from "react-icons/fa";
+import { MdFavorite, MdHelp } from "react-icons/md";
+
+function Navbar() {
+  const [nav, setNav] = useState(false);
+
+  return (
+    <nav className="flex justify-between py-4 sm:px-[80px] px-[60px] border-b border-borrow">
+      <section className="flex items-center justify-between w-[400px]">
+        <div className="">
+          <Link to="/">
+            <img className="h-[55px]" src={Logo} alt="Logo click Beard" />
+          </Link>
+        </div>
+        <div>
+          <AiOutlineMenu
+            onClick={() => setNav(!nav)}
+            size={30}
+            className="block right-4 top-4 cursor-pointer md:hidden"
+          />
+        </div>
+      </section>
+
+      {nav ? (
+        <div className="bg-black/95 fixed w-full h-screen z-10 top-0 left-0"></div>
+      ) : (
+        ""
+      )}
+
+      <div
+        className={
+          nav
+            ? "flex flex-col items-center fixed top-0 right-0 w-[250px] h-screen bg-[#d6a77a] z-10 duration-400"
+            : "fixed top-0 right-[100%] w-[300px] h-screen bg-[#d6a77a] z-10 duration-400"
+        }
+      >
+        <AiOutlineClose
+          onClick={() => setNav(!nav)}
+          size={30}
+          className="absolute right-4 top-4 cursor-pointer"
+        />
+        <img className="w-[150px] my-[30px]" src={Logo1} alt="" />
+        <nav className="">
+          <ul className="md:flex flex-col space-y-10 md:items-center">
+            <li className="cursor-pointer font-medium py-2 text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
+              <Link to="/">Agenda</Link>
+            </li>
+            <li className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
+              <Link to="/empresas">Barbeiros</Link>
+            </li>
+            <li className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
+              <Link to="/solucoes/minhassolucoes">Sobre</Link>
+            </li>
+            <li className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
+              <Link to="/login">Logout</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div className="hidden md:flex">
+        <ul className="md:flex md:items-center">
+          <li className="cursor-pointer font-medium py-2 text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 hover:border-b hover:border-[#775533] mx-5">
+            <Link to="/">Agenda</Link>
+          </li>
+          <li className="cursor-pointer font-medium py-2 text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 hover:border-b hover:border-[#775533] mx-5">
+            <Link to="/empresas">Barbeiros</Link>
+          </li>
+          <li className="cursor-pointer font-medium py-2 text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 hover:border-b hover:border-[#775533] mx-5">
+            <Link to="/solucoes/minhassolucoes">Sobre</Link>
+          </li>
+          <li className="cursor-pointer font-medium py-2 text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 hover:border-b hover:border-[#775533] mx-5">
+            <Link to="/login">Logout</Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;
