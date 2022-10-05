@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import Input from "../../../UI/Input";
 import { Link } from "react-router-dom";
 import LoginSection from "../LoginSection";
 import Logo from "../../../../assets/Click-logo.svg";
-
+import { Context } from "../../../../context/UserContext";
+import Message from "../../../UI/Message/Message";
 
 function Register() {
-  function handleChange(e) {}
+  const [user, setUser] = useState({});
+  const { register } = useContext(Context);
+
+  function handleChange(e) {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    register(user);
+  }
 
   return (
     <main>
-      <section className="w-screen h-screen flex justify-center items-center">
+      <section className="h-screen flex justify-center items-center">
         <div className="sm:border border-[#d6a77a] sm:rounded-lg md:rounded-r-none w-[550px] h-[700px] items-center flex flex-col">
           <div className="py-[25px]">
             <img className="w-[180px]" src={Logo} alt="" />
@@ -19,11 +30,11 @@ function Register() {
             <h1 className="text-3xl font-bold pb-5 text-[#d6a77a]">
               Registre-se aqui!
             </h1>
-            <form className="flex flex-col w-[100%]">
+            <form className="flex flex-col w-[100%]" onSubmit={handleSubmit}>
               <Input
                 text="Nome Completo"
-                type="nome"
-                name="nome"
+                type="name"
+                name="name"
                 placeholder="Digite o seu nome"
                 handleOnChange={handleChange}
               />
@@ -48,7 +59,7 @@ function Register() {
                 value="Register"
               />
               <div className="flex items-center justify-center pt-3 text-sm text-[#d6a77a]">
-                <Link to="/login">Já sou cliente!</Link>
+                <Link to="/">Já sou cliente!</Link>
               </div>
             </form>
           </div>

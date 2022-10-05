@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import LoginSection from "./LoginSection";
 import Input from "../../UI/Input";
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/Click-logo.svg";
+import { Context } from "../../../context/UserContext";
+import Message from "../../UI/Message/Message";
 
 function Login() {
-  function handleChange(e) {}
+  const [user, setUser] = useState({});
+  const { login } = useContext(Context);
+
+  function handleChange(e) {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    login(user);
+  }
 
   return (
     <main>
-      <section className="w-screen h-screen flex justify-center items-center">
+      <section className="h-screen flex justify-center items-center">
         <div className="sm:border border-[#d6a77a] sm:rounded-lg md:rounded-r-none w-[550px] h-[700px] items-center flex flex-col">
           <div className="py-[25px]">
             <img className="w-[180px]" src={Logo} alt="" />
@@ -19,7 +31,7 @@ function Login() {
             <p className="pb-5 text-[#d6a77a]">
               Faça seu login e agende um horário!
             </p>
-            <form className="flex flex-col w-[100%]">
+            <form className="flex flex-col w-[100%]" onSubmit={handleSubmit}>
               <Input
                 text="E-mail"
                 type="email"
@@ -43,10 +55,7 @@ function Login() {
                 </div>
 
                 <div>
-                  <Link
-                    className="text-[#d6a77a] hover:text-[#775533] transition ease-out duration-400"
-                    to="/"
-                  >
+                  <Link className="text-[#d6a77a] hover:text-[#775533] transition ease-out duration-400">
                     Esqueceu a senha ?
                   </Link>
                 </div>
