@@ -1,5 +1,6 @@
 import React from "react";
-import Modal from '../../UI/Modal/Modal'
+import Modal from "../../UI/Modal/Modal";
+import ModalAgenda from "../../UI/Modal/ModalAgenda";
 import AddAgenda from "./UserAgenda/AddAgenda";
 
 function SemAgenda() {
@@ -9,9 +10,9 @@ function SemAgenda() {
         <p>Ainda não existe um horário cadastrado no sistema.</p>
         <p>Deseja agendar um horário?</p>
         <div>
-          <Modal btnText='Agendar horário'>
+          <ModalAgenda btnText="Agendar horário">
             <AddAgenda />
-          </Modal>
+          </ModalAgenda>
         </div>
       </div>
     </section>

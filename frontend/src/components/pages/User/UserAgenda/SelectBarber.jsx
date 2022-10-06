@@ -1,7 +1,7 @@
 import api from "../../../../utils/api";
 import { useState, useEffect } from "react";
 
-function Select({ text, name, options, handleOnChange, value }) {
+function SelectBarber({ text, name, options, handleOnChange, value }) {
   const [barber, setBarber] = useState([]);
   const [token] = useState(localStorage.getItem("token") || "");
 
@@ -31,4 +31,4 @@ function Select({ text, name, options, handleOnChange, value }) {
   );
 }
 
-export default Select;
+export default SelectBarber;

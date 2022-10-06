@@ -1,13 +1,13 @@
 import React from "react";
-import Modal from '../../../UI/Modal/Modal'
+import ModalAgenda from "../../../UI/Modal/ModalAgenda";
 import AddAgenda from "./AddAgenda";
 
 function ComAgenda() {
   return (
     <div className="bg-[#d6a77a] flex justify-end px-[60px]">
-      <Modal btnText="Agendar horário">
+      <ModalAgenda btnText="Agendar horário">
         <AddAgenda />
-      </Modal>
+      </ModalAgenda>
     </div>
   );
 }

@@ -6,7 +6,17 @@ const ObjectId = require("mongoose").Types.ObjectId;
 module.exports = class BarberController {
   //criação dos barbeiros
   static async create(req, res) {
-    const { name, age, hiring } = req.body;
+    const {
+      name,
+      age,
+      hiring,
+      especializacao1,
+      especializacao2,
+      especializacao3,
+      especializacao4,
+      especializacao5,
+      especializacao6,
+    } = req.body;
 
     // validations
     if (!name) {
@@ -29,9 +39,13 @@ module.exports = class BarberController {
       name,
       age,
       hiring,
+      especializacao1,
+      especializacao2,
+      especializacao3,
+      especializacao4,
+      especializacao5,
+      especializacao6,
     });
-
-    const token = getToken(req);
 
     try {
       const newBarber = await barber.save();
@@ -102,7 +116,7 @@ module.exports = class BarberController {
   static async UpdateBarber(req, res) {
     const id = req.params.id;
 
-    const {name, age, hiring} = req.body;
+    const { name, age, hiring } = req.body;
 
     const updatedData = {};
 
