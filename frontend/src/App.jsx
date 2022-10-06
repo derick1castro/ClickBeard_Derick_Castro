@@ -1,13 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AdminAgenda from "./components/pages/admin/admin_agenda/AdminAgenda";
-import AdminBarber from "./components/pages/admin/admin_barber.jsx/administrar_barbeiros/AdminBarber";
-import AdminRegister from "./components/pages/admin/admin_auth/AdminRegister";
+
+// Usuários
+import { UserProvider } from "./context/UserContext";
+import Login from "./components/pages/user/user_auth/Login";
 import Register from "./components/pages/user/user_auth/Register";
 import Agenda from "./components/pages/user/user_agenda/administrar_agenda/Agenda";
-import { UserProvider } from "./context/UserContext";
+
+// Administradores
 import { AdminProvider } from "./context/AdminContext";
 import AdminLogin from "./components/pages/admin/admin_auth/AdminLogin";
-import Login from "./components/pages/user/user_auth/Login";
+import AdminRegister from "./components/pages/admin/admin_auth/AdminRegister";
+import AdminAgenda from "./components/pages/admin/admin_agenda/AdminAgenda";
+import AdminBarber from "./components/pages/admin/admin_barber.jsx/administrar_barbeiros/AdminBarber";
 
 export function App() {
   return (
@@ -23,9 +27,9 @@ export function App() {
         <AdminProvider>
           <Routes>
             <Route path="/login-admin" element={<AdminLogin />} />
+            <Route path="/register-admin" element={<AdminRegister />} />
             <Route path="/agenda-admin" element={<AdminAgenda />} />
             <Route path="/barbeiros-admin" element={<AdminBarber />} />
-            <Route path="/register-admin" element={<AdminRegister />} />
           </Routes>
         </AdminProvider>
       </Router>

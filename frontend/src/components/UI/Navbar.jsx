@@ -50,7 +50,7 @@ function Navbar() {
             <nav className="">
               <ul className="md:flex flex-col space-y-10 md:items-center">
                 <li className="cursor-pointer font-medium py-2 text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
-                  <Link to="/">Agenda</Link>
+                  <Link to="/agenda">Agenda</Link>
                 </li>
                 <li className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
                   <Link to="/solucoes/minhassolucoes">Sobre</Link>
@@ -68,7 +68,7 @@ function Navbar() {
           <div className="hidden md:flex">
             <ul className="md:flex md:items-center">
               <li className="cursor-pointer font-medium py-2 text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 hover:border-b hover:border-[#775533] mx-5">
-                <Link to="/">Agenda</Link>
+                <Link to="/agenda">Agenda</Link>
               </li>
               <li className="cursor-pointer font-medium py-2 text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 hover:border-b hover:border-[#775533] mx-5">
                 <Link to="/solucoes/minhassolucoes">Sobre</Link>
