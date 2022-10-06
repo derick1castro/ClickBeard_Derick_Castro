@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Button from "../../../UI/Button";
 import Input from "../../../UI/Input";
-import Select from "./SelectBarber";
 
-function AddAgenda() {
+function AddBarber() {
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -12,33 +11,35 @@ function AddAgenda() {
   return (
     <section className="max-w-[350px] mx-auto">
       <h1 className="text-borrow text-3xl font-bold my-10">
-        Agendar novo horário
+        Cadastrar novo barbeiro
       </h1>
       <form onSubmit={handleSubmit}>
-        <Select
-          text="Barbeiros"
-          name="barbeiros"
+        <Input
+          text="Nome completo"
+          type="text"
+          name="nome"
+          placeholder="Digite o nome completo"
           handleOnChange={handleChange}
         />
         <Input
-          text="Horário"
-          type="text"
-          name="horario"
-          placeholder="Escolha a hora desejada"
+          text="Idade"
+          type="number"
+          name="idade"
+          placeholder="Digite a idade"
           handleOnChange={handleChange}
         />
         <Input
-          text="Especialidade"
-          type="text"
-          name="especialidade"
-          placeholder="Escolha a especialidade desejada"
+          text="Data de contratação"
+          type="date"
+          name="data"
+          placeholder="Escolha a data de contratação"
           handleOnChange={handleChange}
         />
 
-        <Button>Agendar novo horário</Button>
+        <Button>Cadastrar barbeiro</Button>
       </form>
     </section>
   );
 }
 
-export default AddAgenda;
+export default AddBarber;

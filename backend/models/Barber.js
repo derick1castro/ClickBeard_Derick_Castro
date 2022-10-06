@@ -16,9 +16,6 @@ const Barber = mongoose.model(
       type: String,
       required: true,
     },
-    especialidade: {
-      type: String,
-    },
   })
 );
 
