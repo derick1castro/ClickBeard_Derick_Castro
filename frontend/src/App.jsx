@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AdminAgenda from "./components/pages/Admin/AdminAgenda/AdminAgenda";
-import AdminBarber from "./components/pages/Admin/AdminBarber.jsx/AdminBarber";
-import AdminRegister from "./components/pages/Admin/AdminAuth/AdminRegister";
-import Login from "./components/pages/Auth/Login";
-import Register from "./components/pages/Auth/UserRegister/Register";
-import Agenda from "./components/pages/User/Agenda";
+import AdminAgenda from "./components/pages/admin/admin_agenda/AdminAgenda";
+import AdminBarber from "./components/pages/admin/admin_barber.jsx/administrar_barbeiros/AdminBarber";
+import AdminRegister from "./components/pages/admin/admin_auth/AdminRegister";
+import Register from "./components/pages/user/user_auth/Register";
+import Agenda from "./components/pages/user/user_agenda/administrar_agenda/Agenda";
 import { UserProvider } from "./context/UserContext";
 import { AdminProvider } from "./context/AdminContext";
-import AdminLogin from "./components/pages/Admin/AdminAuth/AdminLogin";
+import AdminLogin from "./components/pages/admin/admin_auth/AdminLogin";
+import Login from "./components/pages/user/user_auth/Login";
 
 export function App() {
   return (

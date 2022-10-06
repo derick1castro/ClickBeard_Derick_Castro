@@ -42,54 +42,57 @@ function BarbeirosForm({ handleSubmit, barbeirosData, btnText }) {
           handleOnChange={handleChange}
           value={barbeiros.hiring || ""}
         />
-        <InputCheckbox
-          text="Corte de tesoura"
-          type="checkbox"
-          name="especializacao1"
-          placeholder="Escolha a data de contratação"
-          handleOnChange={handleChange}
-          value={barbeiros.especializacao1 || ""}
-        />
-        <InputCheckbox
-          text="Corte de máquina"
-          type="checkbox"
-          name="especializacao2"
-          placeholder="Escolha a data de contratação"
-          handleOnChange={handleChange}
-          value={barbeiros.especializacao2 || ""}
-        />
-        <InputCheckbox
-          text="Pezinho"
-          type="checkbox"
-          name="especializacao3"
-          placeholder="Escolha a data de contratação"
-          handleOnChange={handleChange}
-          value={barbeiros.especializacao3 || ""}
-        />
-        <InputCheckbox
-          text="Sobrancelha"
-          type="checkbox"
-          name="especializacao4"
-          placeholder="Escolha a data de contratação"
-          handleOnChange={handleChange}
-          value={barbeiros.especializacao4 || ""}
-        />
-        <InputCheckbox
-          text="Barba"
-          type="checkbox"
-          name="especializacao5"
-          placeholder="Escolha a data de contratação"
-          handleOnChange={handleChange}
-          value={barbeiros.especializacao5 || ""}
-        />
-        <InputCheckbox
-          text="Social"
-          type="checkbox"
-          name="especializacao6"
-          placeholder="Escolha a data de contratação"
-          handleOnChange={handleChange}
-          value={barbeiros.especializacao6 || ""}
-        />
+        <div className="flex flex-wrap justify-between mt-[20px]">
+          <InputCheckbox
+            text="Corte de tesoura"
+            type="checkbox"
+            name="especializacao1"
+            placeholder="Escolha a data de contratação"
+            handleOnChange={handleChange}
+            value={barbeiros.especializacao1 || ""}
+          />
+            <InputCheckbox
+              text="Corte Social"
+              type="checkbox"
+              name="especializacao6"
+              placeholder="Escolha a data de contratação"
+              handleOnChange={handleChange}
+              value={barbeiros.especializacao6 || ""}
+            />
+            <InputCheckbox
+              text="Pezinho"
+              type="checkbox"
+              name="especializacao3"
+              placeholder="Escolha a data de contratação"
+              handleOnChange={handleChange}
+              value={barbeiros.especializacao3 || ""}
+            />
+          <InputCheckbox
+            text="Corte de máquina"
+            type="checkbox"
+            name="especializacao2"
+            placeholder="Escolha a data de contratação"
+            handleOnChange={handleChange}
+            value={barbeiros.especializacao2 || ""}
+          />
+          <InputCheckbox
+            text="Sobrancelha"
+            type="checkbox"
+            name="especializacao4"
+            placeholder="Escolha a data de contratação"
+            handleOnChange={handleChange}
+            value={barbeiros.especializacao4 || ""}
+          />
+          <InputCheckbox
+            text="Barba"
+            type="checkbox"
+            name="especializacao5"
+            placeholder="Escolha a data de contratação"
+            handleOnChange={handleChange}
+            value={barbeiros.especializacao5 || ""}
+          />
+        </div>
+
         <input
           className="text-white bg-[#d6a77a] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md"
           type="submit"

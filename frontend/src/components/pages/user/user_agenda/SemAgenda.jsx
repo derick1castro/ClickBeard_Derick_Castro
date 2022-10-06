@@ -1,7 +1,6 @@
 import React from "react";
-import Modal from "../../UI/Modal/Modal";
-import ModalAgenda from "../../UI/Modal/ModalAgenda";
-import AddAgenda from "./UserAgenda/AddAgenda";
+import ModalAgenda from "../../../UI/Modal/ModalAgenda";
+import AddAgenda from "./adicionar_agenda/AddAgenda";
 
 function SemAgenda() {
   return (

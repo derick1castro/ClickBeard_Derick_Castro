@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "../../../UI/Modal/Modal";
-import AddBarber from "./AddBarber";
+import AddBarber from "./adicionar_barbeiros/AddBarber";
 
 function SemBarber() {
   return (

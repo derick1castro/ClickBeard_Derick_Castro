@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ComponenteModalAgenda from "./ComponenteModal";
+import ComponenteModalAgenda from "./ComponenteModalAgenda";
 
 const ModalAgenda = ({ children, btnText }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);

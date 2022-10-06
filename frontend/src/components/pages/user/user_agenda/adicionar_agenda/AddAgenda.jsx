@@ -1,5 +1,5 @@
 import React from "react";
-import AgendaForm from "../../../form/AgendaForm";
+import MainAddAgenda from "./MainAddAgenda";
 
 function AddAgenda() {
 
@@ -8,7 +8,7 @@ function AddAgenda() {
       <h1 className="text-borrow text-3xl font-bold my-10">
         Agendar horário
       </h1>
-      <AgendaForm btnText='Agendar horário'/>
+      <MainAddAgenda/>
     </section>
   );
 }

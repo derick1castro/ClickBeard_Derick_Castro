@@ -12,7 +12,7 @@ const ComponenteModalAgenda = ({ id = "modal", onClose = () => {}, children }) =
       onClick={handleOutSideClick}
     >
       {/* container */}
-      <div className="rounded-lg bg-[#fff] text-[rgba(0,0,0,0.40)] w-[40%] h-[75%] flex justify-center items-center ">
+      <div className="rounded-lg bg-[#fff] text-[rgba(0,0,0,0.40)] w-[80%] sm:w-[400px] flex justify-center items-center ">
         {/* content */}
         <div className="flex flex-col w-full pb-[40px]">{children}</div>
       </div>

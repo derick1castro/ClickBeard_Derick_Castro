@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SelectBarber from "../pages/User/UserAgenda/SelectBarber";
+import SelectBarber from "../pages/user/user_agenda/SelectBarber";
 import Input from "../UI/Input";
 import InputCheckbox from "../UI/InputCheckbox";
 

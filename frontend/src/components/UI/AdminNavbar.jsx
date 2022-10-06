@@ -37,8 +37,8 @@ function AdminNavbar() {
           <div
             className={
               nav
-                ? "flex flex-col items-center fixed top-0 right-0 w-[250px] h-screen bg-[#d6a77a] z-10 duration-400"
-                : "fixed top-0 right-[100%] w-[300px] h-screen bg-[#d6a77a] z-10 duration-400"
+                ? "flex flex-col items-center fixed top-0 right-0 w-[250px] h-screen bg-richBlack z-10 duration-400"
+                : "fixed top-0 right-[100%] w-[300px] h-screen bg-richBlack z-10 duration-400"
             }
           >
             <AiOutlineClose

@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
-import AdminNavbar from "../../../UI/AdminNavbar";
-import ComBarber from "./ComBarber";
-import SemBarber from "./SemBarber";
-import { Context } from "../../../../context/AdminContext";
-import api from "../../../../utils/api";
-import Button from "../../../UI/Button";
+import React, { useState, useEffect, useContext } from "react";
+import api from "../../../../../utils/api";
+import { Context } from "../../../../../context/AdminContext";
 
-function AdminBarber() {
+import ComBarber from "../ComBarber";
+import SemBarber from "../SemBarber";
+import Wrapper from "../../../../UI/Wrapper";
+
+function MainAdminBarber() {
   const [barber, setBarber] = useState([]);
   const [token] = useState(localStorage.getItem("token") || "");
   const { authenticated } = useContext(Context);
@@ -31,12 +31,10 @@ function AdminBarber() {
         return err.response.data;
       });
   }
-
   return (
-    <section>
+    <Wrapper>
       {authenticated ? (
-        <>
-          <AdminNavbar />
+        <div>
           {barber.length > 0 ? <ComBarber /> : <SemBarber />}
           <div className="flex flex-col items-center mt-[20px] mb-[20px]">
             <p className="text-[42px] font-bold text-[#d6a77a]">Barbeiros</p>
@@ -46,9 +44,9 @@ function AdminBarber() {
               </p>
             </span>
           </div>
-          <section className=" flex flex-wrap mx-[150px] justify-start">
+          <section className=" flex flex-wrap sm:mx-[150px] justify-center sm:justify-start">
             {barber.map((barbeiros) => (
-              <div className="w-[490px] border border-[#d6a77a] rounded-xl m-4">
+              <div className="w-[400px] sm:w-[505px] border border-[#d6a77a] rounded-xl m-4">
                 <div className=" my-3 mx-4 space-y-3 text-[#d6a77a]">
                   <p>
                     <span className="font-bold text-xl">Nome :</span>{" "}
@@ -89,11 +87,11 @@ function AdminBarber() {
                     </label>
                   </div>
                   <div className="flex justify-between">
-                    <button className="text-white bg-[#d6a77a] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[200px]">
+                    <button className="text-white bg-[#d6a77a] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[175px] sm:w-[200px]">
                       Editar
                     </button>
                     <button
-                      className="text-white bg-[#4e0707] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[200px]"
+                      className="text-white bg-[#4e0707] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[175px] sm:w-[200px]"
                       onClick={() => {
                         removeBarber(barbeiros._id);
                       }}
@@ -105,10 +103,10 @@ function AdminBarber() {
               </div>
             ))}
           </section>
-        </>
+        </div>
       ) : null}
-    </section>
+    </Wrapper>
   );
 }
 
-export default AdminBarber;
+export default MainAdminBarber;

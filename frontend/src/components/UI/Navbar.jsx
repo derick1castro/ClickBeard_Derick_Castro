@@ -37,8 +37,8 @@ function Navbar() {
           <div
             className={
               nav
-                ? "flex flex-col items-center fixed top-0 right-0 w-[250px] h-screen bg-[#d6a77a] z-10 duration-400"
-                : "fixed top-0 right-[100%] w-[300px] h-screen bg-[#d6a77a] z-10 duration-400"
+                ? "flex flex-col items-center fixed top-0 right-0 w-[250px] h-screen bg-richBlack z-10 duration-400"
+                : "fixed top-0 right-[100%] w-[300px] h-screen bg-richBlack z-10 duration-400"
             }
           >
             <AiOutlineClose
@@ -51,9 +51,6 @@ function Navbar() {
               <ul className="md:flex flex-col space-y-10 md:items-center">
                 <li className="cursor-pointer font-medium py-2 text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
                   <Link to="/">Agenda</Link>
-                </li>
-                <li className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
-                  <Link to="/empresas">Barbeiros</Link>
                 </li>
                 <li className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
                   <Link to="/solucoes/minhassolucoes">Sobre</Link>
@@ -72,9 +69,6 @@ function Navbar() {
             <ul className="md:flex md:items-center">
               <li className="cursor-pointer font-medium py-2 text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 hover:border-b hover:border-[#775533] mx-5">
                 <Link to="/">Agenda</Link>
-              </li>
-              <li className="cursor-pointer font-medium py-2 text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 hover:border-b hover:border-[#775533] mx-5">
-                <Link to="/empresas">Barbeiros</Link>
               </li>
               <li className="cursor-pointer font-medium py-2 text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 hover:border-b hover:border-[#775533] mx-5">
                 <Link to="/solucoes/minhassolucoes">Sobre</Link>
