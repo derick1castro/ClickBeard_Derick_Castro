@@ -31,6 +31,7 @@ function MainAdminBarber() {
         return err.response.data;
       });
   }
+  
   return (
     <Wrapper>
       {authenticated ? (
@@ -44,9 +45,12 @@ function MainAdminBarber() {
               </p>
             </span>
           </div>
-          <section className=" flex flex-wrap sm:mx-[150px] justify-center sm:justify-start">
+          <section className=" flex flex-wrap sm:mx-[150px] justify-center lg:justify-center sm:justify-start">
             {barber.map((barbeiros) => (
-              <div className="w-[400px] sm:w-[505px] border border-[#d6a77a] rounded-xl m-4">
+              <div
+                key={barbeiros._id}
+                className="w-[400px] sm:w-[505px] xl:w-[420px] 2x:w-[600px] border border-[#d6a77a] rounded-xl m-4"
+              >
                 <div className=" my-3 mx-4 space-y-3 text-[#d6a77a]">
                   <p>
                     <span className="font-bold text-xl">Nome :</span>{" "}
@@ -86,12 +90,12 @@ function MainAdminBarber() {
                       {barbeiros.especializacao6}
                     </label>
                   </div>
-                  <div className="flex justify-between">
-                    <button className="text-white bg-[#d6a77a] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[175px] sm:w-[200px]">
+                  <div className="flex justify-between sm:space-x-10">
+                    <button className="text-white bg-[#d6a77a] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[150px] sm:w-[180px] md:w-[220px] ">
                       Editar
                     </button>
                     <button
-                      className="text-white bg-[#4e0707] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[175px] sm:w-[200px]"
+                      className="text-white bg-[#4e0707] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[150px] sm:w-[180px] md:w-[220px]"
                       onClick={() => {
                         removeBarber(barbeiros._id);
                       }}

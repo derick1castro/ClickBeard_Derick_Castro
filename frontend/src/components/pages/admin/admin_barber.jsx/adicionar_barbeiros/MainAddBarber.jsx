@@ -4,9 +4,9 @@ import BarbeirosForm from "../../../../form/BarbeirosForm";
 import Wrapper from "../../../../UI/Wrapper";
 
 function MainAddBarber() {
-  async function registerBarber() {
+  async function registerBarber(barbeiro) {
     await api
-      .post("barbeiros/create")
+      .post("barbeiros/create", barbeiro)
       .then((response) => {
         return response.data;
       })

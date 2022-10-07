@@ -6,7 +6,12 @@ function BarbeirosForm({ handleSubmit, barbeirosData, btnText }) {
   const [barbeiros, setBarbeiros] = useState(barbeirosData || {});
 
   function handleChange(e) {
-    setBarbeiros({ ...barbeiros, [e.target.name]: e.target.value });
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    setBarbeiros({
+      ...barbeiros,
+      [e.target.name]: value,
+    });
   }
 
   function submit(e) {
@@ -49,24 +54,24 @@ function BarbeirosForm({ handleSubmit, barbeirosData, btnText }) {
             name="especializacao1"
             placeholder="Escolha a data de contratação"
             handleOnChange={handleChange}
-            value={barbeiros.especializacao1 || ""}
+            value={barbeiros.especializacao1 || false}
           />
-            <InputCheckbox
-              text="Corte Social"
-              type="checkbox"
-              name="especializacao6"
-              placeholder="Escolha a data de contratação"
-              handleOnChange={handleChange}
-              value={barbeiros.especializacao6 || ""}
-            />
-            <InputCheckbox
-              text="Pezinho"
-              type="checkbox"
-              name="especializacao3"
-              placeholder="Escolha a data de contratação"
-              handleOnChange={handleChange}
-              value={barbeiros.especializacao3 || ""}
-            />
+          <InputCheckbox
+            text="Corte Social"
+            type="checkbox"
+            name="especializacao6"
+            placeholder="Escolha a data de contratação"
+            handleOnChange={handleChange}
+            value={barbeiros.especializacao6 || true}
+          />
+          <InputCheckbox
+            text="Pezinho"
+            type="checkbox"
+            name="especializacao3"
+            placeholder="Escolha a data de contratação"
+            handleOnChange={handleChange}
+            value={barbeiros.especializacao3 || ""}
+          />
           <InputCheckbox
             text="Corte de máquina"
             type="checkbox"

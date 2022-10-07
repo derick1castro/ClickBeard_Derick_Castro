@@ -16,9 +16,11 @@ app.use(express.static("public"));
 const UserRoutes = require("./routes/UserRoutes");
 const AdminRoutes = require("./routes/AdminRoutes");
 const BarberRoutes = require("./routes/BarberRoutes");
+const AgendaRoutes = require("./routes/AgendaRoutes");
 
 app.use("/users", UserRoutes);
 app.use("/admin", AdminRoutes);
 app.use("/barbeiros", BarberRoutes);
+app.use("/agenda", AgendaRoutes);
 
 app.listen(5000);
