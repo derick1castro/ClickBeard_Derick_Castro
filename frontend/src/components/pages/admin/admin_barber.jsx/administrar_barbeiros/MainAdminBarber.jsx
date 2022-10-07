@@ -31,7 +31,7 @@ function MainAdminBarber() {
         return err.response.data;
       });
   }
-  
+
   return (
     <Wrapper>
       {authenticated ? (
@@ -66,28 +66,80 @@ function MainAdminBarber() {
                   </p>
                   <div className="flex flex-wrap justify-between">
                     <label className="mr-[30px] w-[148px]" htmlFor="esp">
-                      <input className="mr-2" type="checkbox" id="esp" />
-                      {barbeiros.especializacao1}
+                      <input
+                        className="mr-2"
+                        type="checkbox"
+                        disabled={
+                          barbeiros.especializacao1 == "true" ? false : true
+                        }
+                        id="esp"
+                      />
+                      {barbeiros.especializacao1 === "true"
+                        ? "Corte de tesoura"
+                        : "Corte de tesoura"}
                     </label>
                     <label className="mr-[30px] w-[148px]" htmlFor="esp">
-                      <input className="mr-2" type="checkbox" id="esp" />
-                      {barbeiros.especializacao2}
+                      <input
+                        className="mr-2"
+                        type="checkbox"
+                        disabled={
+                          barbeiros.especializacao2 == "true" ? false : true
+                        }
+                        id="esp"
+                      />
+                      {barbeiros.especializacao2 === "true"
+                        ? "Corte de máquina"
+                        : "Corte de máquina"}
                     </label>
                     <label className="mr-[30px] w-[148px]" htmlFor="esp">
-                      <input className="mr-2 " type="checkbox" id="esp" />
-                      {barbeiros.especializacao3}
+                      <input
+                        className="mr-2 "
+                        type="checkbox"
+                        disabled={
+                          barbeiros.especializacao3 == "true" ? false : true
+                        }
+                        id="esp"
+                      />
+                      {barbeiros.especializacao3 === "true"
+                        ? "Pezinho"
+                        : "Pezinho"}
                     </label>
                     <label className="mr-[30px] w-[148px]" htmlFor="esp">
-                      <input className="mr-2" type="checkbox" id="esp" />
-                      {barbeiros.especializacao4}
+                      <input
+                        className="mr-2"
+                        type="checkbox"
+                        disabled={
+                          barbeiros.especializacao4 == "true" ? false : true
+                        }
+                        id="esp"
+                      />
+                      {barbeiros.especializacao4 === "true"
+                        ? "Sobrancelha"
+                        : "Sobrancelha"}
                     </label>
                     <label className="mr-[30px] w-[148px]" htmlFor="esp">
-                      <input className="mr-2" type="checkbox" id="esp" />
-                      {barbeiros.especializacao5}
+                      <input
+                        className="mr-2"
+                        type="checkbox"
+                        disabled={
+                          barbeiros.especializacao5 == "true" ? false : true
+                        }
+                        id="esp"
+                      />
+                      {barbeiros.especializacao5 === "true" ? "Barba" : "Barba"}
                     </label>
                     <label className="mr-[30px] w-[148px]" htmlFor="esp">
-                      <input className="mr-2" type="checkbox" id="esp" />
-                      {barbeiros.especializacao6}
+                      <input
+                        className="mr-2"
+                        type="checkbox"
+                        disabled={
+                          barbeiros.especializacao6 == "true" ? false : true
+                        }
+                        id="esp"
+                      />
+                      {barbeiros.especializacao6 === "true"
+                        ? "Corte Social"
+                        : "Corte Social"}
                     </label>
                   </div>
                   <div className="flex justify-between sm:space-x-10">

@@ -5,7 +5,6 @@ import InputCheckbox from "../UI/InputCheckbox";
 import SelectHora from "../UI/SelectHora";
 
 function AgendaForm({ handleSubmit, barbeirosData, btnText }) {
-  
   const [barbeiros, setBarbeiros] = useState(barbeirosData || {});
   const [especializacao1, setEspecializacao1] = useState(false);
   const [especializacao2, setEspecializacao2] = useState(false);
@@ -13,10 +12,11 @@ function AgendaForm({ handleSubmit, barbeirosData, btnText }) {
   const [especializacao4, setEspecializacao4] = useState(false);
   const [especializacao5, setEspecializacao5] = useState(false);
   const [especializacao6, setEspecializacao6] = useState(false);
+  const [barbeiro, setBarbeiro] = useState({});
 
   function handleChange(e) {
     console.log(e.target);
-    const barbeiro = barbeiros.filter((b) => b._id == e.target.value)[0];
+    setBarbeiro(barbeiros.filter((b) => b._id == e.target.value)[0]);
     console.log(barbeiros);
     console.log(barbeiro);
 
@@ -64,7 +64,15 @@ function AgendaForm({ handleSubmit, barbeirosData, btnText }) {
   function submit(e) {
     e.preventDefault();
     console.log(barbeiros);
-    handleSubmit(barbeiros);
+    handleSubmit({
+      name: barbeiro.name,
+      especializacao1,
+      especializacao2,
+      especializacao3,
+      especializacao4,
+      especializacao5,
+      especializacao6,
+    });
   }
 
   function barber(e) {
@@ -81,9 +89,8 @@ function AgendaForm({ handleSubmit, barbeirosData, btnText }) {
           text="Selecione um barbeiro"
           value={barbeiros.name || ""}
         />
-        <SelectHora 
-        text='Horários'/>
-        {/* <SelectBarber text="Selecione um hórario" /> */}
+        <SelectHora text="Horários" />
+
         <p className="text-[#d6a77a] font-bold">Especialidades :</p>
         <div className="flex flex-wrap justify-between mt-[20px]">
           <InputCheckbox
@@ -98,7 +105,7 @@ function AgendaForm({ handleSubmit, barbeirosData, btnText }) {
             text="Corte Social"
             type="checkbox"
             name="especializacao6"
-            disabled={!especializacao2}
+            disabled={!especializacao6}
             handleOnChange={handleChangeCheck}
           />
           <InputCheckbox
@@ -112,21 +119,21 @@ function AgendaForm({ handleSubmit, barbeirosData, btnText }) {
             text="Corte de máquina"
             type="checkbox"
             name="especializacao2"
-            disabled={!especializacao4}
+            disabled={!especializacao2}
             handleOnChange={handleChangeCheck}
           />
           <InputCheckbox
             text="Sobrancelha"
             type="checkbox"
             name="especializacao4"
-            disabled={!especializacao5}
+            disabled={!especializacao4}
             handleOnChange={handleChangeCheck}
           />
           <InputCheckbox
             text="Barba"
             type="checkbox"
             name="especializacao5"
-            disabled={!especializacao6}
+            disabled={!especializacao5}
             handleOnChange={handleChangeCheck}
           />
         </div>

@@ -17,14 +17,12 @@ function MainAgenda() {
     });
   }, [token]);
 
-  async function removeBarber(id) {
+  async function removeAgenda(id) {
     await api
-      .delete(`/barbeiros/${id}`)
+      .delete(`/agenda/${id}`)
       .then((response) => {
-        const updatedBarber = barber.filter(
-          (barbeiros) => barbeiros._id !== id
-        );
-        setBarber(updatedBarber);
+        const updatedAgenda = agenda.filter((agenda) => agenda._id !== id);
+        setAgenda(updatedAgenda);
         return response.data;
       })
       .catch((err) => {
@@ -46,13 +44,12 @@ function MainAgenda() {
             </span>
           </div>
           <section className=" flex flex-wrap sm:mx-[150px] justify-center sm:justify-start">
-            {agenda.map((agenda) => {
-              <div className="w-[400px] sm:w-[505px] border border-platinum rounded-xl m-4">
-                <div className=" my-3 mx-4 space-y-3 ">
+            {agenda.map((agenda) => (
+              <div className="w-[400px] sm:w-[505px] border border-[#d6a77a] rounded-xl m-4">
+                <div className=" my-3 mx-4 space-y-3 text-[#d6a77a]">
                   <p>
                     <span className="font-bold text-xl">Nome : </span>
-                    {agenda.name}Dérick Castro Domingos
-                    {agenda.hora} horas
+                    {agenda.name}
                   </p>
                   <p>
                     <span className="font-bold text-xl">Horário : </span>
@@ -62,24 +59,45 @@ function MainAgenda() {
                     <span className="font-bold text-xl">Especialidades :</span>{" "}
                   </p>
                   <div className="space-y-3">
-                    <p>{agenda.especializacao1}</p>
-                    <p>{agenda.especializacao2}</p>
-                    <p>{agenda.especializacao3}</p>
-                    <p>{agenda.especializacao4}</p>
-                    <p>Sobrancelha</p>
-                    <p>Barba</p>
+                    <p>
+                      {agenda.especializacao1 === "true"
+                        ? "● Corte de tesoura"
+                        : ""}
+                    </p>
+                    <p>
+                      {agenda.especializacao2 === "true"
+                        ? "● Corte de máquina"
+                        : ""}
+                    </p>
+                    <p>
+                      {agenda.especializacao3 === "true" ? "● Pezinho" : ""}
+                    </p>
+                    <p>
+                      {agenda.especializacao4 === "true" ? "● Sobrancelha" : ""}
+                    </p>
+                    <p>{agenda.especializacao4 === "true" ? "● Barba" : ""}</p>
+                    <p>
+                      {agenda.especializacao4 === "true"
+                        ? "● Corte Social"
+                        : ""}
+                    </p>
                   </div>
                   <div className="flex justify-between">
-                    <button className="text-richBlack bg-platinum hover:bg-[#353535] duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[175px] sm:w-[200px]">
+                    <button className="text-white bg-[#d6a77a] hover:hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[175px] sm:w-[200px]">
                       Editar
                     </button>
-                    <button className="text-white bg-[#4e0707] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[175px] sm:w-[200px]">
+                    <button
+                      className="text-white bg-[#4e0707] hover:bg-borrow duration-400 transition ease-in-out py-3 px-8 rounded-md text-md w-[175px] sm:w-[200px]"
+                      onClick={() => {
+                        removeAgenda(agenda._id);
+                      }}
+                    >
                       Excluir
                     </button>
                   </div>
                 </div>
-              </div>;
-            })}
+              </div>
+            ))}
           </section>
         </div>
       ) : null}

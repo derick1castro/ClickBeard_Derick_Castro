@@ -23,11 +23,6 @@ module.exports = class AgendaController {
       return;
     }
 
-    if (!hora) {
-      res.status(400).json({ message: "O horário é obrigatório" });
-      return;
-    }
-
     //criar a empresa
     const agenda = new Agenda({
       name,

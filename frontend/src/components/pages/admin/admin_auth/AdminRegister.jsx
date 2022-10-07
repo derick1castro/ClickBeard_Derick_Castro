@@ -1,14 +1,14 @@
 import React from "react";
 import RegisterAdminForm from "../../../form/RegisterAdminForm";
 import Wrapper from "../../../UI/Wrapper";
-import LoginSection from "../../Users/LoginSection";
 import Logo from "../../../../assets/Click-logo.svg";
+import LoginAdminSection from "../../Users/LoginAdminSection";
 
 function AdminRegister() {
   return (
     <Wrapper>
       <section className="h-screen flex justify-center items-center">
-        <div className="sm:border border-[#d6a77a] sm:rounded-lg md:rounded-r-none w-[550px] h-[700px] items-center flex flex-col">
+        <div className="sm:border-y sm:border-l border-[#d6a77a] sm:rounded-lg md:rounded-r-none w-[550px] h-[700px] items-center flex flex-col">
           <div className="py-[25px]">
             <img className="w-[180px]" src={Logo} alt="" />
           </div>
@@ -20,7 +20,7 @@ function AdminRegister() {
           </div>
         </div>
         <div className="hidden md:flex">
-          <LoginSection />
+          <LoginAdminSection />
         </div>
       </section>
     </Wrapper>

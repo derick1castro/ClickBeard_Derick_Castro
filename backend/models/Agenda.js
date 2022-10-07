@@ -10,7 +10,6 @@ const Agenda = mongoose.model(
     },
     hora: {
       type: Number,
-      required: true,
     },
     especializacao1: {
       type: String,

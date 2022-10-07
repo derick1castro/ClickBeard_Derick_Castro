@@ -2,7 +2,7 @@ import React from "react";
 import LoginAdminForm from "../../../form/LoginAdminForm";
 import Wrapper from "../../../UI/Wrapper";
 import Logo from "../../../../assets/Click-logo.svg";
-import LoginSection from "../../Users/LoginSection";
+import LoginAdminSection from "../../Users/LoginAdminSection";
 
 function AdminLogin() {
   return (
@@ -21,7 +21,7 @@ function AdminLogin() {
           </div>
         </div>
         <div className="hidden md:flex">
-          <LoginSection />
+          <LoginAdminSection />
         </div>
       </section>
     </Wrapper>
