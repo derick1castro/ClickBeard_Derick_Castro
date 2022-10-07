@@ -48,14 +48,17 @@ function AdminNavbar() {
             />
             <img className="w-[150px] my-[30px]" src={Logo1} alt="" />
             <nav className="">
-              <ul className="md:flex flex-col space-y-10 md:items-center">
+              <ul className="md:flex flex-col space-y-10 items-center">
                 <li className="cursor-pointer font-medium py-2 text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
                   <Link to="/agenda-admin">Agendamentos</Link>
                 </li>
                 <li className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
                   <Link to="/barbeiros-admin">Barbeiros</Link>
                 </li>
-                <li className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
+                <li
+                  className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5"
+                  onClick={logoutAdmin}
+                >
                   Sair
                 </li>
               </ul>

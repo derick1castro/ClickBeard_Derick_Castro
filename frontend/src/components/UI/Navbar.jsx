@@ -52,9 +52,6 @@ function Navbar() {
                 <li className="cursor-pointer font-medium py-2 text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
                   <Link to="/agenda">Agenda</Link>
                 </li>
-                <li className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5">
-                  <Link to="/solucoes/minhassolucoes">Sobre</Link>
-                </li>
                 <li
                   className="cursor-pointer font-medium py-2  text-white sm:text-[#d6a77a] hover:text-[#775533] transition ease-in-out duration-400 sm:hover:border-b hover:border-[#775533] mx-5"
                   onClick={logout}

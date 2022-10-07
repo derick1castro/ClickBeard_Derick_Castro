@@ -1,12 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
 const brandColors = {
-  birdBlue: "#1D9BF0",
   platinum: "#e2e0e2",
-  silver: "#71767B",
-  onix: "#333639",
   richBlack: "#15202B",
-  dark: "#000",
   white: "#fff",
   borrow: "#775533",
 };

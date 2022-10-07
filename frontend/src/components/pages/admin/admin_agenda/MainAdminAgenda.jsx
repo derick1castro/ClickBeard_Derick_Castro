@@ -36,16 +36,25 @@ function MainAdminAgenda() {
         <section>
           <AdminNavbar />
           <div>
-            <div className="flex flex-col items-center mt-[20px] mb-[20px]">
-              <p className="text-[42px] font-bold text-[#d6a77a]">
-                Agendamentos
-              </p>
-              <span>
-                <p className="text-[#d6a77a]">
-                  {agenda.length} Horários agendados
+            {agenda.length > 0 ? (
+              <div className="flex flex-col items-center mt-[20px] mb-[20px]">
+                <p className="text-[42px] font-bold text-[#d6a77a]">
+                  Agendamentos
                 </p>
-              </span>
-            </div>
+                <span>
+                  <p className="text-[#d6a77a]">
+                    {agenda.length} Horários agendados
+                  </p>
+                </span>
+              </div>
+            ) : (
+              <section className="h-[90vh]">
+                <div className="flex flex-col items-center justify-center h-full space-y-2 text-[#d6a77a] text-xl">
+                  <p>Ainda não existe agendamentos cadastrados no sistema.</p>
+                </div>
+              </section>
+            )}
+
             <section className=" flex flex-wrap sm:mx-[150px] justify-center sm:justify-start">
               {agenda.map((agenda) => (
                 <div className="w-[400px] sm:w-[505px] border border-[#d6a77a] rounded-xl m-4">
