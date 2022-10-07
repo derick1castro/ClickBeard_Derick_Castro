@@ -19,7 +19,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
-* Você instalou a versão mais recente de `<Nodeja e Reactjs / NPM / MongoDB Compass>`
+* Você instalou a versão mais recente de `<Nodejs e Reactjs / Npm / MongoDB Compass>`
 * Você tem uma máquina `<Windows / Linux / Mac>`.
 
 ## 🚀 Instalando ClickBeard_Derick_Castro
